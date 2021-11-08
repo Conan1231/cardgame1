@@ -152,6 +152,12 @@ public class mainForm {
                 }
             case 2:
                 pos3.setIcon(card);
+                int tmp;
+                if (first_nr > second_nr){
+                    tmp = first_nr;
+                    first_nr = second_nr;
+                    second_nr = tmp;
+                }
                 if((insideRadioButton.isSelected() && ((nr%13)<=second_nr) && ((nr%13)>=first_nr)) || (outsideRadioButton.isSelected() && ((nr%13)>second_nr) && ((nr%13)<first_nr))){
                     JOptionPane.showMessageDialog(null, "nice, your are absolutely right");
                     game_part++;

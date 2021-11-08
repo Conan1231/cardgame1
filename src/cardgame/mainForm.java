@@ -24,9 +24,16 @@ public class mainForm {
     private JButton shuffleDeckButton;
     private JRadioButton higherRadioButton;
     private JRadioButton lowerRadioButton;
+    private JRadioButton insideRadioButton;
+    private JRadioButton outsideRadioButton;
+    private JRadioButton diamondsRadioButton;
+    private JRadioButton clubsRadioButton;
+    private JRadioButton spadesRadioButton;
+    private JRadioButton heartsRadioButton;
 
     static int game_part = 0;
-    static int latest_nr = 0;
+    static int first_nr = 0;
+    static int second_nr = 0;
 
     card Cardgame[] = new card[52];
     int pos = 0;
@@ -57,7 +64,12 @@ public class mainForm {
                 shuffle_deck();
                 pos1.setIcon(new ImageIcon(getClass().getResource("./res/pos1.png")));
                 pos2.setIcon(new ImageIcon(getClass().getResource("./res/pos2.png")));
+                pos3.setIcon(new ImageIcon(getClass().getResource("./res/pos3.png")));
+                pos4.setIcon(new ImageIcon(getClass().getResource("./res/pos4.png")));
                 game_part = 0;
+                for(int i = 0; i<52; i++)
+                    Cardgame[i]=new card(i);
+                shuffle_deck();
             }
         });
         shuffleDeckButton.addActionListener(new ActionListener() {
@@ -115,7 +127,7 @@ public class mainForm {
                 {
                     JOptionPane.showMessageDialog(null, "nice, your are absolutely right");
                     game_part++;
-                    latest_nr = nr%13;
+                    first_nr = nr%13;
                     break;
                 }
                 else {
@@ -126,9 +138,10 @@ public class mainForm {
                 }
             case 1:
                 pos2.setIcon(card);
-                if ((higherRadioButton.isSelected() && (nr%13)> latest_nr ) || (lowerRadioButton.isSelected() && (nr%13)< latest_nr )){
+                if ((higherRadioButton.isSelected() && (nr%13)> first_nr ) || (lowerRadioButton.isSelected() && (nr%13)< first_nr )){
                     JOptionPane.showMessageDialog(null, "nice, your are absolutely right");
                     game_part++;
+                    second_nr = nr%13;
                     break;
                 }
                 else{
@@ -137,14 +150,31 @@ public class mainForm {
                     newCardButton.setBackground(Color.red);
                     break;
                 }
-
-
-
+            case 2:
+                pos3.setIcon(card);
+                if((insideRadioButton.isSelected() && ((nr%13)<=second_nr) && ((nr%13)>=first_nr)) || (outsideRadioButton.isSelected() && ((nr%13)>second_nr) && ((nr%13)<first_nr))){
+                    JOptionPane.showMessageDialog(null, "nice, your are absolutely right");
+                    game_part++;
+                    break;
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "wrong. game over!!!!!");
+                    newCardButton.setEnabled(false);
+                    newCardButton.setBackground(Color.red);
+                    break;
+                }
+            case 3:
+                pos4.setIcon(card);
+                if (((diamondsRadioButton.isSelected() && (nr <= 12))) || (heartsRadioButton.isSelected() && (nr<=25) && (nr>12)) || (spadesRadioButton.isSelected() && (nr<=38) && (nr>25)) || (clubsRadioButton.isSelected() && (nr >38))) {
+                    JOptionPane.showMessageDialog(null, "Winner Winner Chicken Dinner!");
+                    break;
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "wrong. game over!");
+                    newCardButton.setEnabled(false);
+                    newCardButton.setBackground(Color.red);
+                    break;
+                }
+            }
         }
-
-
-
     }
-
-
-}

@@ -160,7 +160,7 @@
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
-          <component id="fafdb" class="javax.swing.JRadioButton" default-binding="true">
+          <component id="fafdb" class="javax.swing.JRadioButton" binding="insideRadioButton">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -168,7 +168,7 @@
               <text value="inside"/>
             </properties>
           </component>
-          <component id="6921d" class="javax.swing.JRadioButton" default-binding="true">
+          <component id="6921d" class="javax.swing.JRadioButton" binding="outsideRadioButton">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -203,20 +203,20 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="6cab" class="javax.swing.JRadioButton" default-binding="true">
+          <component id="6cab" class="javax.swing.JRadioButton" binding="diamondsRadioButton">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="diamond"/>
+              <text value="diamonds"/>
             </properties>
           </component>
-          <component id="4fb67" class="javax.swing.JRadioButton" default-binding="true">
+          <component id="4fb67" class="javax.swing.JRadioButton" binding="heartsRadioButton">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="heart"/>
+              <text value="hearts"/>
             </properties>
           </component>
           <component id="b337b" class="javax.swing.JLabel">
@@ -227,20 +227,20 @@
               <text value="What Symbol"/>
             </properties>
           </component>
-          <component id="88134" class="javax.swing.JRadioButton" default-binding="true">
+          <component id="88134" class="javax.swing.JRadioButton" binding="spadesRadioButton">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="spade"/>
+              <text value="spades"/>
             </properties>
           </component>
-          <component id="4b1ec" class="javax.swing.JRadioButton" default-binding="true">
+          <component id="4b1ec" class="javax.swing.JRadioButton" binding="clubsRadioButton">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="cross"/>
+              <text value="clubs"/>
             </properties>
           </component>
         </children>
@@ -271,6 +271,16 @@
     <group name="buttonGroup_higherlower">
       <member id="c8812"/>
       <member id="61cb4"/>
+    </group>
+    <group name="pos_of_card">
+      <member id="fafdb"/>
+      <member id="6921d"/>
+    </group>
+    <group name="symbolButtons">
+      <member id="6cab"/>
+      <member id="4fb67"/>
+      <member id="88134"/>
+      <member id="4b1ec"/>
     </group>
   </buttonGroups>
 </form>

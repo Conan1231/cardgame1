@@ -138,7 +138,7 @@ public class mainForm {
                 }
             case 1:
                 pos2.setIcon(card);
-                if ((higherRadioButton.isSelected() && (nr%13)> first_nr ) || (lowerRadioButton.isSelected() && (nr%13)< first_nr )){
+                if ((higherRadioButton.isSelected() && (nr%13)>= first_nr ) || (lowerRadioButton.isSelected() && (nr%13)<= first_nr )){
                     JOptionPane.showMessageDialog(null, "nice, your are absolutely right");
                     game_part++;
                     second_nr = nr%13;
@@ -152,13 +152,14 @@ public class mainForm {
                 }
             case 2:
                 pos3.setIcon(card);
-                int tmp;
+                /*int tmp;
                 if (first_nr > second_nr){
                     tmp = first_nr;
                     first_nr = second_nr;
                     second_nr = tmp;
-                }
-                if((insideRadioButton.isSelected() && ((nr%13)<=second_nr) && ((nr%13)>=first_nr)) || (outsideRadioButton.isSelected() && ((nr%13)>second_nr) && ((nr%13)<first_nr))){
+                } */
+                //if((insideRadioButton.isSelected() && ((nr%13)<=second_nr) && ((nr%13)>=first_nr)) || (outsideRadioButton.isSelected() && ((nr%13)>second_nr) && ((nr%13)<first_nr))){
+                if((insideRadioButton.isSelected() && ( ( (nr%13)>=first_nr && (nr%13)<=second_nr ) || ( (nr%13)<=first_nr && (nr%13)>=second_nr ) ) ) || (outsideRadioButton.isSelected() && ( ( (nr%13)<= first_nr && (nr%13)<=second_nr ) || ( (nr%13)>first_nr && (nr%13)>second_nr ) ) ) ){
                     JOptionPane.showMessageDialog(null, "nice, your are absolutely right");
                     game_part++;
                     break;
